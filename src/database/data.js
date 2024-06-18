@@ -1,13 +1,12 @@
 async function connectToDatabase(user, password) {
-  if (user === 'gu' && password === '123') {
+  if (
+    user === process.env.USERDATABASE &&
+    password === process.env.PASSWORDDATABASE
+  ) {
     console.log('Connecting to database')
   } else {
     console.log('Failed to connect to database')
   }
 }
 
-async function Main() {
-  await connectToDatabase('gu', '123')
-}
-
-export default connectToDatabase;
+export default connectToDatabase
